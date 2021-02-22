@@ -117,8 +117,8 @@ void print_win_params(WIN* p_win) {
 }
 
 void init_win_params(WIN* p_win) {
-  p_win->height = 3;
-  p_win->width = 10;
+  p_win->height = 34;
+  p_win->width = 34;
   p_win->starty = (LINES - p_win->height) / 2;
   p_win->startx = (COLS - p_win->width) / 2;
 
