@@ -1,13 +1,10 @@
 #include "box_utils.hpp"
 
 void create_box(BOX* p_win, bool flag) {
-  int i, j;
-  int x, y, w, h;
-
-  x = p_win->startx;
-  y = p_win->starty;
-  w = p_win->width;
-  h = p_win->height;
+  int x = p_win->startx;
+  int y = p_win->starty;
+  int w = p_win->width;
+  int h = p_win->height;
 
   if (flag == true) {
     mvaddch(y, x, p_win->border.tl);
@@ -19,8 +16,8 @@ void create_box(BOX* p_win, bool flag) {
     mvvline(y + 1, x, p_win->border.ls, h - 1);
     mvvline(y + 1, x + w, p_win->border.rs, h - 1);
   } else {
-    for (j = y; j <= y + h; ++j) {
-      for (i = x; i <= x + w; ++i) {
+    for (int j = y; j <= y + h; ++j) {
+      for (int i = x; i <= x + w; ++i) {
         mvaddch(j, i, ' ');
       }
     }
