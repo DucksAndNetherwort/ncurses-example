@@ -22,7 +22,7 @@ find_package(Curses REQUIRED)
 include_directories(${CURSES_INCLUDE_DIR})
 
 include_directories("./src")
-file (GLOB app_SOURCES src/*.c)
+file (GLOB app_SOURCES src/*.cpp)
 
 add_executable(app ${app_SOURCES})
 target_link_libraries(app ${CURSES_LIBRARY})
