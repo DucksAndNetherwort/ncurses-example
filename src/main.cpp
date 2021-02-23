@@ -9,6 +9,7 @@
 #endif
 
 int main(int argc, char* argv[]) {
+  int xx = 0;
   BOX win;
   bool quit = false;
 
@@ -19,6 +20,7 @@ int main(int argc, char* argv[]) {
   raw();
   start_color();
   cbreak();
+  timeout(0);
 
   keypad(stdscr, true);
   noecho();
@@ -33,6 +35,9 @@ int main(int argc, char* argv[]) {
   create_box(&win, true);
 
   while (!quit) {
+    mvaddch(5, xx, 'X');
+    xx++;
+    xx &= 31;
     int ch = getch();
     switch (ch) {
       case 'q':
@@ -41,22 +46,22 @@ int main(int argc, char* argv[]) {
       case CTRL('c'):
         quit = true;
         break;
-      case 'j':
+      case 's':
         create_box(&win, false);
         ++win.starty;
         create_box(&win, true);
         break;
-      case 'h':
+      case 'a':
         create_box(&win, false);
         --win.startx;
         create_box(&win, true);
         break;
-      case 'l':
+      case 'd':
         create_box(&win, false);
         ++win.startx;
         create_box(&win, true);
         break;
-      case 'k':
+      case 'w':
         create_box(&win, false);
         --win.starty;
         create_box(&win, true);
