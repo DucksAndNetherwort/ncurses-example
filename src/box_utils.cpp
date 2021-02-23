@@ -38,10 +38,17 @@ void print_box_params(BOX* p_win) {
 }
 
 void init_box_params(BOX* p_win) {
-  p_win->height = 34;
-  p_win->width = 34;
+  p_win->height = 2;
+  p_win->width = 4;
+
+/* 
+ * This seems to be broken when started on repl.it. Box starts in top left corner, only partially visible.
   p_win->starty = (LINES - p_win->height) / 2;
   p_win->startx = (COLS - p_win->width) / 2;
+*/
+  p_win->starty = 3;
+  p_win->startx = 3;
+
 
   p_win->border.ls = '|';
   p_win->border.rs = '|';

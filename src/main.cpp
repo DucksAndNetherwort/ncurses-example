@@ -3,7 +3,6 @@
 #include <ncurses.h>
 
 #include "box_utils.hpp"
-#include "pixmaps.hpp"
 
 #ifndef CTRL
 #define CTRL(x) ((x)&0x1f)
@@ -27,7 +26,7 @@ int main(int argc, char* argv[]) {
 
  
   attron(COLOR_PAIR(1));
-  printw("Press Ctrl-C or Q to exit");
+  printw("Press Ctrl-C or Q to exit; h,j,k, and l to move the box.");
   refresh();
   attroff(COLOR_PAIR(1));
 
